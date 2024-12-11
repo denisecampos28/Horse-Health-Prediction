@@ -1,4 +1,4 @@
-![](UTA-DataScience-Logo.png)
+![insert__](UTA-DataScience-Logo.png)
 
 # Horse Health Prediction 
 
@@ -8,7 +8,7 @@
 
  * **Definition of the tasks/challenge**:  The task is to predict the health outcome of horses based on features derived from medical observations and tests.
  * **My approach**: The problem was tackled as a classification task using Random Forest and XGBoost models. Comprehensive preprocessing steps ensured data quality and effective model training.
- * **Summary of the performance achieved**: The models achieved competitive performance on the training set. Final predictions were submitted for evaluation on Kaggle.
+ * **Summary of the performance achieved**: The models achieved good performance on the training set. Final predictions were submitted for evaluation on Kaggle.
 
 ## Summary of Workdone
 
@@ -19,30 +19,21 @@
   * Size: 2999 rows (train.csv) and 824 rows (test.csv).
   * Instances: Data was split into training (80%) and testing (20%) sets.
     
-
 #### Preprocessing / Clean up
 
 * Dropped weak predictors based on domain knowledge and exploratory analysis.
-
 * Imputed missing values using the mode or specific default values like "Unknown."
-
-* One-hot encoded categorical variables.
-
+* One hot encoded categorical variables.
 * Scaled numerical features using MinMaxScaler.
-
 * Mapped target classes ("lived," "died," "euthanized") to integers for model compatibility.
   
-
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
-*Examined distributions.
-
-*Identified and visualized outliers using boxplots.
-![download](https://github.com/user-attachments/assets/69cd0a92-0fae-4420-b355-d5d9eff18de7)
-* The target variable was imbalanced, as you can see above
+* Examined distributions.
+* Identified and visualized outliers using boxplots.
+![insert__](https://github.com/user-attachments/assets/21eb414d-528a-4860-bde3-8fcc1bb75168)
+* The target variable is imbalanced, as you can see above
   
-
 ### Problem Formulation
 
  * Input /Output
@@ -52,11 +43,9 @@ Show a few visualization of the data and say a few words about what you see.
     * Random Forest Classifier.
     * XGBoost Classifier.
     * I chose these because they both are classification machine learning algorithms.
-      
  * Hyperparameters:
     * Grid search was used to optimize parameters like n_estimators and max_depth.
     
-
 ### Training
 
 * Training Environment:
@@ -67,14 +56,15 @@ Show a few visualization of the data and say a few words about what you see.
 
 ### Performance Comparison
 
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+* My main evaluation metric is F1 score. The F1 score is the harmonic mean of a model's precision and recall scores. It's a way to combine these two metrics into a single value that provides a balanced evaluation of a model's performance.
+![need](https://github.com/user-attachments/assets/2035a435-852a-40f1-8c15-e90a51eefd7a)
+![byclass](https://github.com/user-attachments/assets/e0a0c399-0fdf-4076-af18-abc1db535c49)
+![f1avg](https://github.com/user-attachments/assets/2717eb87-ccf4-45c6-a140-f4137d94b3ef)
 
 ### Conclusions
 
-* XGBoost performed marginally better than Random Forest in terms of both accuracy and F1-score.
-* Both models demonstrated robustness in handling the dataset's class imbalance.
+* XGBoost performed slightly better than Random Forest in terms of both accuracy and F1-score.
+* Both models did ok in handling the dataset's class imbalance.
 
 ### Future Work
 
@@ -89,15 +79,15 @@ Show a few visualization of the data and say a few words about what you see.
 
 ### Overview of files in repository
 
- * utils.py: various functions that are used in cleaning and visualizing data.
- * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
- * visualization.ipynb: Creates various visualizations of the data.
- * models.py: Contains functions that build the various models.
- * training-model-1.ipynb: Trains the first model and saves model during training.
- * training-model-2.ipynb: Trains the second model and saves model during training.
- * training-model-3.ipynb: Trains the third model and saves model during training.
- * performance.ipynb: loads multiple trained models and compares results.
- * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
+ *  Kaggle Tabular Data.ipynb: This file contains my project guidelines
+ *  train.csv: This file contains a certain portion of the dataset that Kaggle set aside for cleaing and model creation/training.
+ *  test.csv: This file contains a certain portion of the dataset that Kaggle set aside for model testing. 
+ *  sample_submission.csv: This file is an example of what the sample submission 
+ *  hh_loading_and_visualization.ipynb: This file contains my inital look and visulizations of my raw data.
+ *  hh_cleaning_and_train_test.ipynb: This file contains my data cleaning, model creation, and evaluation.
+ *  hh_research.doxc: This file contains research over the dataset, to better understand my analysis.
+ *  rf_submission(1).csv: This file is in the Kaggle's sample_submission format and contains my test results for my test.csv data using my best random forest model.
+ *  xgb_submission(1).csv: This file is in the Kaggle's sample_submission format and contains my test results for my test.csv data using my best xgboost model.
 
 ### Software Setup
 * Required packages:
@@ -116,13 +106,11 @@ Show a few visualization of the data and say a few words about what you see.
 ### Training
 
 * Run the Jupyter notebook hh_cleaning_and_train_test.ipynb to reproduce the training pipeline.
-
 * Save the trained models as best_rf_model.pkl and best_xgb_model.pkl for inference.
 
 #### Performance Evaluation
 
 * Evaluate models on the test set predictions using the metrics provided in the notebook.
-
 
 ## Citations
 
